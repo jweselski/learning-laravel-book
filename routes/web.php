@@ -11,4 +11,5 @@
 |
 */
 
-Route::get('/create', 'TicketsController@create');
+Route::get('/contact', 'TicketsController@create');
+Route::post('/contact', 'TicketsController@store');
