@@ -5,6 +5,15 @@
     <div class="container col-md-8 col-md-offset-2">
         <div class="well well bs-component">
             <form class="form-horizontal" method="post">
+
+                @foreach ($errors->all() as $error)
+                    <p class="alert alert-danger">{{ $error }}</p>
+                @endforeach
+
+                @if (session('status'))
+                    <p class="alert alert-success">{{ session('status') }}</p>
+                @endif
+
                 {{ csrf_field() }}
                 <fieldset>
                     <legend>Submit a new ticket</legend>
