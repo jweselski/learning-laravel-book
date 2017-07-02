@@ -12,5 +12,6 @@
 */
 
 Route::get('/', 'TicketsController@index');
+Route::get('/ticket/{slug?}', 'TicketsController@show');
 Route::get('/contact', 'TicketsController@create');
 Route::post('/contact', 'TicketsController@store');

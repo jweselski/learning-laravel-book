@@ -15,6 +15,13 @@ class TicketsController extends Controller
         return view('tickets.index', compact('tickets'));
     }
 
+    public function show($slug)
+    {
+        $ticket = Ticket::whereSlug($slug)->firstOrFail();
+
+        return view('tickets.show', compact('ticket'));
+    }
+
     public function create()
     {
         return view('tickets.create');
